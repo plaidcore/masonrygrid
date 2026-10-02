@@ -1,10 +1,12 @@
 // Joins the stylesheets in src/styles into dist/style.css.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 
-const files = ["grid.css", "masonry.css"];
+const files = ["index.css"];
 
 const css = await Promise.all(
-  files.map((file) => readFile(new URL(`../src/styles/${file}`, import.meta.url), "utf8")),
+   files.map((file) =>
+      readFile(new URL(`../src/styles/${file}`, import.meta.url), "utf8"),
+   ),
 );
 
 await mkdir(new URL("../dist/", import.meta.url), { recursive: true });

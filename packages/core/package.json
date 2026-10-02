@@ -1,27 +1,39 @@
 {
-  "name": "@masonrygrid/core",
-  "version": "0.0.0",
-  "description": "Framework-agnostic masonry layout engine. Installed automatically by the framework packages.",
-  "license": "ISC",
-  "type": "module",
-  "sideEffects": ["**/*.css"],
-  "main": "./dist/index.js",
-  "types": "./dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./style.css": "./dist/style.css"
-  },
-  "files": ["dist"],
-  "publishConfig": { "access": "public" },
-  "scripts": {
-    "build": "tsup && tsc -p tsconfig.build.json && node scripts/build-css.mjs",
-    "dev": "tsup --watch"
-  },
-  "devDependencies": {
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.0"
-  }
+   "name": "@masonrygrid/core",
+   "version": "0.3.0",
+   "description": "Framework-agnostic masonry layout engine. Installed automatically by the framework packages.",
+   "license": "ISC",
+   "type": "module",
+   "sideEffects": [
+      "./dist/index.js",
+      "**/*.css"
+   ],
+   "main": "./dist/index.js",
+   "types": "./dist/types/index.d.ts",
+   "exports": {
+      ".": {
+         "types": "./dist/types/index.d.ts",
+         "import": "./dist/index.js"
+      },
+      "./style.css": "./dist/style.css"
+   },
+   "files": [
+      "dist"
+   ],
+   "publishConfig": {
+      "access": "public"
+   },
+   "scripts": {
+      "build": "tsup && tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+      "dev": "tsup --watch"
+   },
+   "devDependencies": {
+      "tsup": "^8.3.0",
+      "typescript": "^5.6.0"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/plaidcore/masonrygrid.git",
+      "directory": "packages/core"
+   }
 }
