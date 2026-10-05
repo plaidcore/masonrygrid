@@ -1,6 +1,7 @@
 {
   "name": "@masonrygrid/angular",
-  "version": "0.3.0",
+  "version": "0.8.0",
+  "private": true,
   "description": "Masonry grid component for Angular",
   "keywords": [
     "masonry",
@@ -17,7 +18,7 @@
     "build": "ng-packagr -p ng-package.json -c tsconfig.lib.prod.json && node scripts/finalize-dist.mjs"
   },
   "dependencies": {
-    "@masonrygrid/core": "^0.3.0",
+    "@masonrygrid/core": "^0.8.0",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
@@ -30,5 +31,14 @@
     "ng-packagr": "^20.0.0",
     "rxjs": "^7.8.0",
     "typescript": "~5.8.0"
+  },
+  "homepage": "https://github.com/plaidcore/masonrygrid#readme",
+  "bugs": {
+    "url": "https://github.com/plaidcore/masonrygrid/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plaidcore/masonrygrid.git",
+    "directory": "packages/angular"
   }
 }

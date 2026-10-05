@@ -1,12 +1,14 @@
 # @masonrygrid/angular
 
-## 0.3.0
+## 0.8.0
 
 ### Minor Changes
 
-- Add Angular support for MasonryGrid, enabling the library to be used in Angular applications.
+- fixing proyect structure
+- Fixing packages structure
 
 ### Patch Changes
 
 - Updated dependencies
-  - @masonrygrid/core@0.3.0
+- Updated dependencies
+  - @masonrygrid/core@0.8.0

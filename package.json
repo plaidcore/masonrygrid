@@ -1,23 +1,32 @@
 {
-   "name": "masonrygrid",
-   "private": true,
-   "workspaces": [
-      "packages/core",
-      "packages/react",
-      "packages/angular"
-   ],
-   "description": "Masonry grid for every framework",
-   "license": "ISC",
-   "engines": {
-      "node": ">=18"
-   },
-   "scripts": {
-      "build": "npm run build --workspaces",
-      "changeset": "changeset",
-      "version-packages": "changeset version",
-      "release": "npm run build && changeset publish && npm publish packages/angular/dist --access public"
-   },
-   "devDependencies": {
-      "@changesets/cli": "^2.27.0"
-   }
+  "name": "masonrygrid",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Masonry grid for every framework",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "packages/core",
+    "packages/react",
+    "packages/angular"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish && npm publish packages/angular/dist --access public"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plaidcore/masonrygrid.git"
+  },
+  "homepage": "https://github.com/plaidcore/masonrygrid#readme",
+  "bugs": {
+    "url": "https://github.com/plaidcore/masonrygrid/issues"
+  }
 }

@@ -1,0 +1,88 @@
+# @masonrygrid/react
+
+A masonry grid for React. It uses a 12-column responsive layout, and every item rests on the one above it, so there are no gaps between items of different heights. Styles are injected automatically and the package ships its own TypeScript types.
+
+## Install
+
+```bash
+npm install @masonrygrid/react
+```
+
+Requires React 18 or newer.
+
+## Usage
+
+```jsx
+import { MasonryGrid } from "@masonrygrid/react";
+
+export default function Gallery({ photos }) {
+  return (
+    <MasonryGrid spacing={16}>
+      {photos.map((photo) => (
+        <MasonryGrid.Item key={photo.id} colSpan={{ xs: 12, sm: 6, lg: 4 }}>
+          <img src={photo.src} alt={photo.alt} />
+        </MasonryGrid.Item>
+      ))}
+    </MasonryGrid>
+  );
+}
+```
+
+`MasonryItem` is also available as a named export if you prefer it over `MasonryGrid.Item`.
+
+## `MasonryGrid`
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `spacing` | `number \| string \| { x?: number \| string; y?: number \| string }` | `"1rem"` | Space between items. Numbers are pixels, strings can be any CSS length. Use an object to set each axis separately. |
+
+It also accepts every attribute of a `div` (`className`, `style`, `id`, `data-*`, `aria-*`, event handlers...).
+
+## `MasonryGrid.Item`
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `colSpan` | `number \| "auto" \| "fill" \| ResponsiveColSpan` | `"auto"` | Columns the item spans out of 12. `"auto"` sizes it to its content and `"fill"` makes it take the remaining space of the row. |
+
+It also accepts every attribute of a `div`.
+
+### Responsive `colSpan`
+
+Pass an object to change the span per breakpoint. Each value applies from that screen width upwards (`min-width`):
+
+| Key | From |
+| --- | --- |
+| `xs` | 320px |
+| `sm` | 576px |
+| `md` | 768px |
+| `lg` | 992px |
+| `xl` | 1200px |
+| `xxl` | 1400px |
+
+```jsx
+<MasonryGrid.Item colSpan={{ xs: 12, md: 6, xl: 3 }}>...</MasonryGrid.Item>
+```
+
+## Things to know
+
+- **Items must be direct children** of `MasonryGrid`. Conditional rendering such as `{show && <MasonryGrid.Item />}` works; wrapping items in a fragment does not.
+- **The layout is calculated in the browser.** Items are measured and placed after the first render, and recalculated whenever the grid or any item changes size (for example, when an image finishes loading). With server rendering, the grid takes its final layout after hydration.
+- **Don't pass `index`, `topOffset` or `items` to `MasonryGrid.Item`.** They are injected by `MasonryGrid`.
+
+## Styles
+
+The styles are injected into the page when the package is loaded in the browser, so there is nothing to import.
+
+If your app is server-rendered or has a strict Content Security Policy, import the stylesheet as well:
+
+```js
+import "@masonrygrid/react/style.css";
+```
+
+## TypeScript
+
+Types are included. The props of both components extend the attributes of a `div`, and `ColSpan`, `ResponsiveColSpan` and `Spacing` are exported if you need them.
+
+## License
+
+ISC

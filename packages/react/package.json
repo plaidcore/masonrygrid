@@ -1,52 +1,56 @@
 {
-   "name": "@masonrygrid/react",
-   "version": "0.3.0",
-   "description": "Masonry grid component for React",
-   "keywords": [
-      "masonry",
-      "grid",
-      "react",
-      "layout"
-   ],
-   "license": "ISC",
-   "type": "module",
-   "sideEffects": [
-      "**/*.css"
-   ],
-   "main": "./dist/index.js",
-   "types": "./dist/types/index.d.ts",
-   "exports": {
-      ".": {
-         "types": "./dist/types/index.d.ts",
-         "import": "./dist/index.js"
-      },
-      "./style.css": "./dist/style.css"
-   },
-   "files": [
-      "dist"
-   ],
-   "publishConfig": {
-      "access": "public"
-   },
-   "scripts": {
-      "build": "tsup && tsc -p tsconfig.build.json && node scripts/copy-css.mjs",
-      "dev": "tsup --watch"
-   },
-   "dependencies": {
-      "@masonrygrid/core": "0.3.0"
-   },
-   "peerDependencies": {
-      "react": ">=18"
-   },
-   "devDependencies": {
-      "@types/react": "^19.0.0",
-      "react": "^19.0.0",
-      "tsup": "^8.3.0",
-      "typescript": "^5.6.0"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/plaidcore/masonrygrid.git",
-      "directory": "packages/core"
-   }
+  "name": "@masonrygrid/react",
+  "version": "0.8.0",
+  "description": "Masonry grid component for React",
+  "keywords": [
+    "masonry",
+    "grid",
+    "react",
+    "layout"
+  ],
+  "license": "ISC",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json && node scripts/copy-css.mjs",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "@masonrygrid/core": "^0.8.0"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "~5.8.0"
+  },
+  "homepage": "https://github.com/plaidcore/masonrygrid#readme",
+  "bugs": {
+    "url": "https://github.com/plaidcore/masonrygrid/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plaidcore/masonrygrid.git",
+    "directory": "packages/react"
+  }
 }

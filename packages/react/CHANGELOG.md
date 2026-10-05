@@ -1,23 +1,14 @@
 # @masonrygrid/react
 
-## 0.3.0
+## 0.8.0
 
 ### Minor Changes
 
-- Add Angular support for MasonryGrid, enabling the library to be used in Angular applications.
+- fixing proyect structure
+- Fixing packages structure
 
 ### Patch Changes
 
 - Updated dependencies
-  - @masonrygrid/core@0.3.0
-
-## 0.2.0
-
-### Minor Changes
-
-- Add initial masonry grid functionality with responsive layouts and customizable item sizing.
-
-### Patch Changes
-
 - Updated dependencies
-  - @masonrygrid/core@0.2.0
+  - @masonrygrid/core@0.8.0

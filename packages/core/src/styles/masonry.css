@@ -1,7 +1,0 @@
-.masonry-container {
-   align-content: flex-start;
-}
-.masonry-container > * {
-   position: relative;
-   height: fit-content;
-}
