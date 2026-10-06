@@ -1,6 +1,6 @@
 {
   "name": "@masonrygrid/angular",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "description": "Masonry grid component for Angular",
   "keywords": [
@@ -18,7 +18,7 @@
     "build": "ng-packagr -p ng-package.json -c tsconfig.lib.prod.json && node scripts/finalize-dist.mjs"
   },
   "dependencies": {
-    "@masonrygrid/core": "^0.8.0",
+    "@masonrygrid/core": "^0.9.0",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
