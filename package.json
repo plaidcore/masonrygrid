@@ -7,11 +7,7 @@
   "engines": {
     "node": ">=18"
   },
-  "workspaces": [
-    "packages/core",
-    "packages/react",
-    "packages/angular"
-  ],
+  "workspaces": ["packages/core", "packages/react", "packages/vue", "packages/angular"],
   "scripts": {
     "build": "npm run build --workspaces",
     "changeset": "changeset",

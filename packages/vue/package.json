@@ -1,14 +1,20 @@
 {
-  "name": "@masonrygrid/core",
+  "name": "@masonrygrid/vue",
   "version": "0.9.2",
-  "description": "Framework-agnostic masonry layout engine. Installed automatically by the framework packages.",
-  "license": "MIT",
+  "description": "Masonry grid component for Vue",
+  "keywords": [
+    "masonry",
+    "grid",
+    "vue",
+    "layout"
+  ],
+  "license": "ISC",
   "type": "module",
   "sideEffects": [
-    "./dist/index.js",
     "**/*.css"
   ],
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
@@ -24,12 +30,19 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup && tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "build": "tsup && tsc -p tsconfig.build.json && node scripts/copy-css.mjs",
     "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "@masonrygrid/core": "^0.9.2"
+  },
+  "peerDependencies": {
+    "vue": ">=3.3.0"
   },
   "devDependencies": {
     "tsup": "^8.3.0",
-    "typescript": "~5.8.0"
+    "typescript": "~5.8.0",
+    "vue": "^3.5.0"
   },
   "homepage": "https://github.com/plaidcore/masonrygrid#readme",
   "bugs": {
@@ -38,6 +51,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/plaidcore/masonrygrid.git",
-    "directory": "packages/core"
+    "directory": "packages/vue"
   }
 }

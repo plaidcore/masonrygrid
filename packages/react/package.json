@@ -1,6 +1,6 @@
 {
   "name": "@masonrygrid/react",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Masonry grid component for React",
   "keywords": [
     "masonry",
@@ -33,7 +33,7 @@
     "dev": "tsup --watch"
   },
   "dependencies": {
-    "@masonrygrid/core": "^0.9.1"
+    "@masonrygrid/core": "^0.9.2"
   },
   "peerDependencies": {
     "react": ">=18"
