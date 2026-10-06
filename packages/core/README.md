@@ -25,4 +25,4 @@ The framework-agnostic masonry engine behind the `@masonrygrid` packages. It mea
 
 ## License
 
-ISC
+MIT

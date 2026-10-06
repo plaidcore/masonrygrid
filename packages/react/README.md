@@ -10,22 +10,24 @@ npm install @masonrygrid/react
 
 Requires React 18 or newer.
 
-## Usage
+## Basic usage
 
 ```jsx
-import { MasonryGrid } from "@masonrygrid/react";
+import { MasonryGrid } from '@masonrygrid/react';
 
-export default function Gallery({ photos }) {
+const heights = [227, 295, 352, 292, 180, 260];
+
+const Demo = () => {
   return (
-    <MasonryGrid spacing={16}>
-      {photos.map((photo) => (
-        <MasonryGrid.Item key={photo.id} colSpan={{ xs: 12, sm: 6, lg: 4 }}>
-          <img src={photo.src} alt={photo.alt} />
+    <MasonryGrid spacing="1rem">
+      {heights.map((height, index) => (
+        <MasonryGrid.Item key={index} colSpan={{ lg: 4 }}>
+          <div style={{ height, outline: "1px solid black" }} className="item"></div>
         </MasonryGrid.Item>
       ))}
     </MasonryGrid>
   );
-}
+};
 ```
 
 `MasonryItem` is also available as a named export if you prefer it over `MasonryGrid.Item`.
@@ -85,4 +87,4 @@ Types are included. The props of both components extend the attributes of a `div
 
 ## License
 
-ISC
+MIT

@@ -22,13 +22,31 @@ import { MasonryGrid, MasonryItem } from "@masonrygrid/angular";
   selector: "app-gallery",
   imports: [MasonryGrid, MasonryItem],
   template: `
-    <masonry-grid [spacing]="16">
-      @for (photo of photos; track photo.id) {
-        <masonry-item [colSpan]="{ xs: 12, sm: 6, lg: 4 }">
-          <img [src]="photo.src" [alt]="photo.alt" />
-        </masonry-item>
-      }
-    </masonry-grid>
+    import { Component } from '@angular/core';
+    import { MasonryGrid, MasonryItem } from '@masonrygrid/angular';
+
+    const heights = [227, 295, 352, 292, 180, 260];
+
+    @Component({
+      selector: 'app-masonry-item',
+      standalone: true,
+      imports: [MasonryGrid, MasonryItem],
+      template: `
+        <masonry-grid [spacing]="16">
+          @for (height of heights; track $index) {
+            <masonry-item [colSpan]="{ xs: 12, sm: 6, lg: 4 }">
+              <div
+                class="item"
+                style="outline: 1px solid black"
+                [style.height.px]="height"
+              ></div>
+            </masonry-item>
+          }
+        ` ,
+    })
+    export class MasonryItemComponent {
+      heights = heights;
+    }
   `,
 })
 export class Gallery {
@@ -84,4 +102,4 @@ If your app is server-rendered or has a strict Content Security Policy, add the 
 
 ## License
 
-ISC
+MIT

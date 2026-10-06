@@ -1,15 +1,22 @@
 # masonrygrid
 
-A masonry grid for every framework. A shared core handles the layout, and each framework package is a thin wrapper around it.
+A flexible masonry grid for **React, Vue, and Angular**.
 
-| Package | Description |
-| --- | --- |
-| [`@masonrygrid/react`](packages/react) | Masonry grid component for React. |
-| [`@masonrygrid/core`](packages/core) | Framework-agnostic layout engine, installed automatically by the framework packages. |
+Build responsive masonry layouts with framework-specific packages, powered by a shared layout engine.
 
-More frameworks and a web component are planned.
+## Installation
 
-## Using it
+Install the package for your framework:
+
+| Framework | Package                                    |
+| --------- | ------------------------------------------ |
+| React     | [`@masonrygrid/react`](packages/react)     |
+| Vue       | [`@masonrygrid/vue`](packages/vue)         |
+| Angular   | [`@masonrygrid/angular`](packages/angular) |
+
+Each framework package includes everything needed to use MasonryGrid. **No additional `@masonrygrid/core` dependency is required.**
+
+### React
 
 ```bash
 npm install @masonrygrid/react
@@ -17,20 +24,42 @@ npm install @masonrygrid/react
 
 See the [React package](packages/react) for usage and props.
 
+### Vue
+
+```bash
+npm install @masonrygrid/vue
+```
+
+See the [Vue package](packages/vue) for usage and props.
+
+### Angular
+
+```bash
+npm install @masonrygrid/angular
+```
+
+See the [Angular package](packages/angular) for usage and props.
+
+## How it works
+
+MasonryGrid uses a shared, framework-agnostic layout engine internally, with lightweight packages for each supported framework.
+
+The core package is an internal workspace dependency and does not need to be installed separately.
+
 ## Development
 
-This is an npm workspaces monorepo.
+This repository is an npm workspaces monorepo.
 
 ```bash
 npm install
 npm run build
 ```
 
-The workspaces are built in the order they are listed in the root `package.json`, so `core` goes before the packages that depend on it.
+The workspaces are built in dependency order, with `core` built before the framework packages that depend on it.
 
 ### Releasing
 
-Versions are managed with [changesets](https://github.com/changesets/changesets). All `@masonrygrid/*` packages are versioned together.
+Versions are managed with [Changesets](https://github.com/changesets/changesets). All `@masonrygrid/*` packages are versioned together.
 
 ```bash
 npm run changeset
@@ -40,4 +69,4 @@ npm run release
 
 ## License
 
-ISC
+MIT

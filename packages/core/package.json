@@ -2,7 +2,7 @@
   "name": "@masonrygrid/core",
   "version": "0.8.0",
   "description": "Framework-agnostic masonry layout engine. Installed automatically by the framework packages.",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "sideEffects": [
     "./dist/index.js",
