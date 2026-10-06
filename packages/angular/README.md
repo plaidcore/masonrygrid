@@ -15,42 +15,30 @@ Requires Angular 20 or newer.
 Both components are standalone:
 
 ```ts
-import { Component } from "@angular/core";
-import { MasonryGrid, MasonryItem } from "@masonrygrid/angular";
+import { Component } from '@angular/core';
+import { MasonryGrid, MasonryItem } from '@masonrygrid/angular';
+
+const heights = [227, 295, 352, 292, 180, 260];
 
 @Component({
-  selector: "app-gallery",
+  selector: 'demo',
+  standalone: true,
   imports: [MasonryGrid, MasonryItem],
-  template: `
-    import { Component } from '@angular/core';
-    import { MasonryGrid, MasonryItem } from '@masonrygrid/angular';
-
-    const heights = [227, 295, 352, 292, 180, 260];
-
-    @Component({
-      selector: 'app-masonry-item',
-      standalone: true,
-      imports: [MasonryGrid, MasonryItem],
-      template: `
-        <masonry-grid [spacing]="16">
-          @for (height of heights; track $index) {
-            <masonry-item [colSpan]="{ xs: 12, sm: 6, lg: 4 }">
-              <div
-                class="item"
-                style="outline: 1px solid black"
-                [style.height.px]="height"
-              ></div>
-            </masonry-item>
-          }
-        ` ,
-    })
-    export class MasonryItemComponent {
-      heights = heights;
-    }
-  `,
+  template: \`
+    <masonry-grid [spacing]="16">
+      @for (height of heights; track $index) {
+        <masonry-item [colSpan]="{ xs: 12, sm: 6, lg: 4 }">
+          <div
+            class="item"
+            style="outline: 1px solid black"
+            [style.height.px]="height"
+          ></div>
+        </masonry-item>
+      }
+    \` ,
 })
-export class Gallery {
-  photos = [];
+export class Demo {
+  heights = heights;
 }
 ```
 
