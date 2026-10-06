@@ -10,7 +10,7 @@ npm install @masonrygrid/angular
 
 Requires Angular 20 or newer.
 
-## Usage
+## Basic usage
 
 Both components are standalone:
 
@@ -24,18 +24,19 @@ const heights = [227, 295, 352, 292, 180, 260];
   selector: 'demo',
   standalone: true,
   imports: [MasonryGrid, MasonryItem],
-  template: \`
-    <masonry-grid [spacing]="16">
-      @for (height of heights; track $index) {
-        <masonry-item [colSpan]="{ xs: 12, sm: 6, lg: 4 }">
+  template: `
+    <masonry-grid [spacing]="{ x: 16, y: 16 }">
+      @for (item of items; track $index) {
+        <masonry-item [colSpan]="item.colSpan ? item.colSpan : 'auto'">
           <div
             class="item"
-            style="outline: 1px solid black"
-            [style.height.px]="height"
+            [style.height.px]="item.height"
+            [style.width.px]="item.width"
           ></div>
         </masonry-item>
       }
-    \` ,
+    </masonry-grid>
+  ` ,
 })
 export class Demo {
   heights = heights;
