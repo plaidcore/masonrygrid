@@ -1,5 +1,13 @@
 # @masonrygrid/angular
 
+## 0.9.1
+
+### Patch Changes
+
+- Fixing readmes
+- Updated dependencies
+  - @masonrygrid/core@0.9.1
+
 ## 0.9.0
 
 ### Minor Changes
