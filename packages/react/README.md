@@ -12,8 +12,6 @@ Requires React 18 or newer.
 
 ## Basic usage
 
-**Live playground:** https://masonrygrid.vercel.app/
-
 ```jsx
 import { MasonryGrid } from '@masonrygrid/react';
 
@@ -33,6 +31,10 @@ const Demo = () => {
 ```
 
 `MasonryItem` is also available as a named export if you prefer it over `MasonryGrid.Item`.
+
+## Demo
+
+[see live playground](https://masonrygrid.vercel.app/)
 
 ## `MasonryGrid`
 
@@ -90,6 +92,3 @@ Types are included. The props of both components extend the attributes of a `div
 ## License
 
 MIT
-
-```
-```
