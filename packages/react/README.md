@@ -34,7 +34,7 @@ const Demo = () => {
 
 ## Demo
 
-[see live playground](https://masonrygrid.vercel.app/)
+see: [live playground](https://masonrygrid.vercel.app/)
 
 ## `MasonryGrid`
 
@@ -77,18 +77,4 @@ Pass an object to change the span per breakpoint. Each value applies from that s
 
 ## Styles
 
-The styles are injected into the page when the package is loaded in the browser, so there is nothing to import.
-
-If your app is server-rendered or has a strict Content Security Policy, import the stylesheet as well:
-
-```js
-import "@masonrygrid/react/style.css";
-```
-
-## TypeScript
-
-Types are included. The props of both components extend the attributes of a `div`, and `ColSpan`, `ResponsiveColSpan` and `Spacing` are exported if you need them.
-
-## License
-
-MIT
+The styles are injected into the page when the package is loaded
