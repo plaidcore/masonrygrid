@@ -1,6 +1,6 @@
 # @masonrygrid/react
 
-A masonry grid for React. It uses a 12-column responsive layout, and every item rests on the one above it, so there are no gaps between items of different heights. Styles are injected automatically and the package ships its own TypeScript types.
+A responsive column masonry layout for React. Build flexible grids where items naturally fill the space around them, with responsive independent column control over how much space each item occupies.
 
 ## Install
 
@@ -60,6 +60,7 @@ Pass an object to change the span per breakpoint. Each value applies from that s
 | `lg` | 992px |
 | `xl` | 1200px |
 | `xxl` | 1400px |
+
 
 ```jsx
 <MasonryGrid.Item colSpan={{ xs: 12, md: 6, xl: 3 }}>...</MasonryGrid.Item>

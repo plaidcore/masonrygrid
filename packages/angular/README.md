@@ -1,6 +1,6 @@
 # @masonrygrid/angular
 
-A masonry grid for Angular. It uses a 12-column responsive layout, and every item rests on the one above it, so there are no gaps between items of different heights. Styles are injected automatically.
+A responsive column masonry layout for React. Build flexible grids where items naturally fill the space around them, with responsive independent column control over how much space each item occupies.
 
 ## Install
 
@@ -26,12 +26,12 @@ const heights = [227, 295, 352, 292, 180, 260];
   imports: [MasonryGrid, MasonryItem],
   template: `
     <masonry-grid [spacing]="{ x: 16, y: 16 }">
-      @for (item of items; track $index) {
-        <masonry-item [colSpan]="item.colSpan ? item.colSpan : 'auto'">
+      @for (height of heights; track $index) {
+        <masonry-item [colSpan]="{ lg: 4 }">
           <div
             class="item"
-            [style.height.px]="item.height"
-            [style.width.px]="item.width"
+            style="outline: 1px solid black"
+            [style.height.px]="height"
           ></div>
         </masonry-item>
       }
@@ -69,6 +69,7 @@ Pass an object to change the span per breakpoint. Each value applies from that s
 | `lg` | 992px |
 | `xl` | 1200px |
 | `xxl` | 1400px |
+
 
 ```html
 <masonry-item [colSpan]="{ xs: 12, md: 6, xl: 3 }">...</masonry-item>

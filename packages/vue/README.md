@@ -1,6 +1,6 @@
 # @masonrygrid/vue
 
-A masonry grid for Vue 3. It uses a 12-column responsive layout, and every item rests on the one above it, so there are no gaps between items of different heights. Styles are injected automatically and the package ships its own TypeScript types.
+A responsive column masonry layout for React. Build flexible grids where items naturally fill the space around them, with responsive independent column control over how much space each item occupies.
 
 ## Install
 
@@ -8,20 +8,20 @@ A masonry grid for Vue 3. It uses a 12-column responsive layout, and every item 
 npm install @masonrygrid/vue
 ```
 
-Requires Vue 3.3 or newer.
+Requires Vue 3 or newer.
 
-## Usage
+## Basic Usage
 
 ```vue
 <script setup>
-import { MasonryGrid } from '@masonrygrid/vue';
+import { MasonryGrid, MasonryItem } from '@masonrygrid/vue';
 
 const heights = [227, 295, 352, 292, 180, 260];
 </script>
 
 <template>
   <MasonryGrid spacing="1rem">
-    <MasonryGrid.Item
+    <MasonryItem
       v-for="(height, index) in heights"
       :key="index"
       :col-span="{ lg: 4 }"
@@ -30,7 +30,7 @@ const heights = [227, 295, 352, 292, 180, 260];
         class="item"
         :style="{ height: height + 'px', outline: '1px solid black' }"
       ></div>
-    </MasonryGrid.Item>
+    </MasonryItem>
   </MasonryGrid>
 </template>
 ```
@@ -61,6 +61,7 @@ Pass an object to change the span per breakpoint. Each value applies from that s
 | `lg` | 992px |
 | `xl` | 1200px |
 | `xxl` | 1400px |
+
 
 ```vue
 <MasonryItem :col-span="{ xs: 12, md: 6, xl: 3 }">...</MasonryItem>
