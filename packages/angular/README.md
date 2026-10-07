@@ -1,6 +1,6 @@
 # @masonrygrid/angular
 
-A responsive column masonry layout for React. Build flexible grids where items naturally fill the space around them, with responsive independent column control over how much space each item occupies.
+A responsive column masonry layout for Angular. Build flexible grids where items naturally fill the space around them, with responsive independent column control over how much space each item occupies.
 
 ## Install
 
@@ -36,7 +36,7 @@ const heights = [227, 295, 352, 292, 180, 260];
         </masonry-item>
       }
     </masonry-grid>
-  ` ,
+  `,
 })
 export class Demo {
   heights = heights;
@@ -45,31 +45,34 @@ export class Demo {
 
 Attributes such as `id`, `class` or `data-*` work on both elements as on any other element.
 
+## Demo
+
+see: [live playground](https://masonrygrid.vercel.app/)
+
 ## `<masonry-grid>`
 
-| Input | Type | Default | Description |
-| --- | --- | --- | --- |
+| Input     | Type                                                                 | Default  | Description                                                                                                        |
+| --------- | -------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
 | `spacing` | `number \| string \| { x?: number \| string; y?: number \| string }` | `"1rem"` | Space between items. Numbers are pixels, strings can be any CSS length. Use an object to set each axis separately. |
 
 ## `<masonry-item>`
 
-| Input | Type | Default | Description |
-| --- | --- | --- | --- |
+| Input     | Type                                              | Default  | Description                                                                                                                   |
+| --------- | ------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | `colSpan` | `number \| "auto" \| "fill" \| ResponsiveColSpan` | `"auto"` | Columns the item spans out of 12. `"auto"` sizes it to its content and `"fill"` makes it take the remaining space of the row. |
 
 ### Responsive `colSpan`
 
 Pass an object to change the span per breakpoint. Each value applies from that screen width upwards (`min-width`):
 
-| Key | From |
-| --- | --- |
-| `xs` | 320px |
-| `sm` | 576px |
-| `md` | 768px |
-| `lg` | 992px |
-| `xl` | 1200px |
+| Key   | From   |
+| ----- | ------ |
+| `xs`  | 320px  |
+| `sm`  | 576px  |
+| `md`  | 768px  |
+| `lg`  | 992px  |
+| `xl`  | 1200px |
 | `xxl` | 1400px |
-
 
 ```html
 <masonry-item [colSpan]="{ xs: 12, md: 6, xl: 3 }">...</masonry-item>
@@ -77,8 +80,8 @@ Pass an object to change the span per breakpoint. Each value applies from that s
 
 ## Things to know
 
-- **Items must be direct content of `<masonry-grid>`**, in the same template. `@for` and `@if` blocks around them are fine; wrapping them in your own component is not.
-- **The layout is calculated in the browser.** Items are measured and placed after the first render, and recalculated whenever the grid or any item changes size (for example, when an image finishes loading). With server rendering, the grid takes its final layout after hydration.
+* **Items must be direct content of `<masonry-grid>`,** in the same template. `@for` and `@if` blocks around them are fine; wrapping them in your own component is not.
+* **The layout is calculated in the browser.** Items are measured and placed after the first render, and recalculated whenever the grid or any item changes size (for example, when an image finishes loading). With server rendering, the grid takes its final layout after hydration.
 
 ## Styles
 
